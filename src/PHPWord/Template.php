@@ -152,5 +152,10 @@ class PHPWord_Template {
 
         $this->_documentXML = $result;
     }
+
+    public function replaceImage($path,$imageName){
+        $this->_objZip->deleteName('word/media/'.$imageName);
+        $this->_objZip->addFile($path,'word/media/'.$imageName);
+    }
 }
 ?>
